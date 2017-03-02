@@ -315,7 +315,7 @@ class Population:
         """
         for a in range(0, num_postdocs):
             self.postdoc_id = (len(self.agents))
-            print("New postdoc: {}".format(self.postdoc_id))
+            #print("New postdoc: {}".format(self.postdoc_id))
             self.agents.append(Academic(self.postdoc_id, self.params, self.rng))
             self.agents[self.postdoc_id].research_quality = self.rng.random()
             self.agents[self.postdoc_id].applying = False
