@@ -86,15 +86,14 @@ class Simulation:
             print('Total agents: {}'.format(len(self.sim.agents)))
             self.sim.current_postdocs()
             self.accepted_grants.append(self.sim.acceptance_rate()[0])
-            "Experimenting with ROI!!!"
             #print(self.accepted_grants)
             
             # self.dynamic_roi.append(self.calc_roi_dynamic(self.accepted_grants[t])[2])
             # print('Current ROI result: {}'.format(self.dynamic_roi[t]))
             self.roi_sum.append(self.calc_roi_sum(self.accepted_grants[t]))
-            print('Current ROI sum: {}'.format(self.roi_sum[t]))
+            #print('Current ROI sum: {}'.format(self.roi_sum[t]))
             self.roi_sum_pdr.append(self.calc_roi_no_pdr(self.accepted_grants[t]))
-            print('Current ROI, no PDRs: {}'.format(self.roi_sum_pdr[t]))
+            #print('Current ROI, no PDRs: {}'.format(self.roi_sum_pdr[t]))
             self.sim.clear_all()
 
 
@@ -260,7 +259,12 @@ class Simulation:
         total_res_nof2 = self.sim.estimate_output_sum()
         roi = ((total_res2 - total_res_nof2) - funding_units) / funding_units
         return roi
-
+        
+    def calc_redundancies(self):
+        #return total redundancies
+        self.redundancies_total = len([a for a in self.sim.agents if a.made_redundant == True])
+        
+        
     def write_output(self):
 
         "Write data plots."
