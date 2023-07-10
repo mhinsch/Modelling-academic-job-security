@@ -4,7 +4,7 @@
   notNeeded : [all_stats, save_base_stats, write_output, write_data_2d, write_plot, rounded, hsl2rgb,
       get_red_green_colour, transpose, get_mean_and_sum, get_mean, all_grant_counts, create_dir,
       write_data, calc_mean_time_grant],
-  needsTesting : [],
+  needsTesting : [calculate_grant_quality],
   main : run_sim,
   ignore :  [__init__, save_plot_stats]
 }
