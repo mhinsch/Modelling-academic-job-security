@@ -17,49 +17,6 @@ class Simulation:
         self.plot_colours = Utils.create_plot_colour_dict()
         self.endgame = int(self.params['iterations'] * 0.9)
 
-    def init_stats(self):
-
-        "Initialise data structures for storing data."""
-
-        self.all_stats = []     # for endgame iterations
-        self.final_stats = []   # for final iteration
-        self.alloc = []
-        self.accept = []
-
-        self.all_tg = []
-        self.tg_g = []
-        self.tg_fg = []
-        self.tg_ng = []
-        
-        self.all_r = []
-        self.r_g = []
-        self.r_fg = []
-        self.r_ng = []
-        self.r_pdr = []
-        self.r_former_pdr = []
-        self.r_old_academic = []
-
-        self.all_rq = []
-        self.rq_g = []
-        self.rq_ng = []
-        self.rq_fail = []
-        self.rq_na = []
-        self.rq_pdr = []
-        self.rq_former_pdr = []
-        self.rq_old_academic = []
-
-        self.corr_rq_tg = []
-        self.corr_rq_apply = []
-        self.corr_rq_held = []
-
-        self.pdr_total = []
-        self.academic_total = []
-        self.exited_total = []
-        self.accepted_grants = []
-        self.dynamic_roi = []
-        self.roi_sum = []
-        self.roi_sum_pdr = []
-
 
     def run(self):
 
